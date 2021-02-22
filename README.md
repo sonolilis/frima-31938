@@ -28,9 +28,8 @@
 | city            | string     | null: false                   |
 | address         | string     | null: false                   |
 | building        | string     |                               |
-| phone_number    | integer    | null: false                   |
-| user            | references | null: false, foreign_key: true|
-| order           | reference  | null: false, foreign_key: true|
+| phone_number    | string     | null: false                   |
+| order           | references | null: false, foreign_key: true|
 
 
 ### Association
@@ -70,7 +69,6 @@
 ### Association
 
 - belongs_to       :user
-- has_one          :buy
 - has_many         :comments
 - has_one          :purchase_history
 
@@ -78,10 +76,10 @@
 
 ## purchase_histories テーブル
 
-| Column          | Type       | Options     |
-| --------------- | ---------- | ----------- |
-| user            | string     | null: false |
-| order           | string     | null: false |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user            | references | null: false, foreign_key: true |
+| order           | references | null: false, foreign_key: true |
 
 
 ### Association

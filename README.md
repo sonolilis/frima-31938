@@ -64,6 +64,7 @@
 | shipping_id         | integer    | null: false                    |
 | shipment_source_id  | integer    | null: false                    |
 | date_of_shipment_id | integer    | null: false                    |
+| user                | references | null: false, foreign_key: true |
 
 
 ### Association

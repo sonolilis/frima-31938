@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-02-21T13:10:19.556Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="CBSzlcTPk45v9rgs33bc" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-22T11:44:23.571Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="PboBqC6-RZjLP6hrVEc-" version="14.2.4" type="embed">
     <diagram id="1T2Yw_xXfy4e_t3Hp8hc" name="ページ1">
-        <mxGraphModel dx="898" dy="635" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1189" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="0" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -46,7 +46,7 @@
                 <mxCell id="30" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="27" vertex="1">
                     <mxGeometry y="40" width="130" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="31" value="post_number&lt;br&gt;prefecture_id&lt;br&gt;city&lt;br&gt;address&lt;br&gt;phone_number&lt;br&gt;user&lt;br&gt;order" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;" parent="30" vertex="1">
+                <mxCell id="31" value="post_number&lt;br&gt;prefecture_id&lt;br&gt;city&lt;br&gt;address&lt;br&gt;phone_number&lt;br&gt;purchase_history" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;" parent="30" vertex="1">
                     <mxGeometry width="130" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="32" value="" style="shape=table;html=1;whiteSpace=wrap;startSize=0;container=1;collapsible=0;childLayout=tableLayout;" parent="1" vertex="1">

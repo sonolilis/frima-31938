@@ -17,7 +17,7 @@
 
 - has_many :orders
 - has_many :comments
-- has_many :purchase_history
+- has_many :purchase_histories
 
 ## buys テーブル
 

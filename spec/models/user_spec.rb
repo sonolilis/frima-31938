@@ -49,16 +49,23 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
-      it 'password半角英数字混合でなければ登録できない' do
+      it 'password半角英数字混合でなければ登録できない（半角英字だけでは登録できない）' do
         @user.password = 'aaaaaa'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
-      it 'password半角英数字混合でなければ登録できない' do
-        @user.password = '1111111'
+      it 'password半角英数字混合でなければ登録できない（数字だけでは登録できない）' do
+        @user.password = '111111'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
       end
+
+      it 'password半角英数字混合でなければ登録できない（全角では登録できない）' do
+        @user.password = 'ああああああ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid')
+      end
+
       it 'passwordが存在してもpassword_confirmationが空では登録できない' do
         @user.password_confirmation = ''
         @user.valid?
@@ -94,13 +101,23 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name kana can't be blank")
       end
-      it 'first_name_kanaが全角でなければ登録できない' do
+      it 'first_name_kanaが全角でなければ登録できない（半角では登録不可）' do
         @user.first_name_kana = 'aaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('First name kana is invalid. Input full-width katakana characters.')
+      end
+      it 'first_name_kanaが全角カタカナでなければ登録できない' do
+        @user.first_name_kana = 'あああ'
         @user.valid?
         expect(@user.errors.full_messages).to include('First name kana is invalid. Input full-width katakana characters.')
       end
       it 'last_name_kanaが全角でなければ登録できない' do
         @user.last_name_kana = 'aaa'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Last name kana is invalid. Input full-width katakana characters.')
+      end
+      it 'first_name_kanaが全角カタカナでなければ登録できない' do
+        @user.last_name_kana = 'あああ'
         @user.valid?
         expect(@user.errors.full_messages).to include('Last name kana is invalid. Input full-width katakana characters.')
       end

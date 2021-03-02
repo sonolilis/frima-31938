@@ -15,11 +15,11 @@
 
 ### Association
 
-- has_many :orders
+- has_many :items
 - has_many :comments
 - has_many :purchase_histories
 
-## buys テーブル
+## orders テーブル
 
 | Column           | Type       | Options                       |
 | ---------------- | ---------- | ----------------------------- |
@@ -52,7 +52,7 @@
 - belongs_to :order
 
 
-## orders テーブル
+## items テーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |

@@ -27,12 +27,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Discription can't be blank")
       end
       it "category_idが0以下だと登録できない" do
-        @item.category_id = '0'
+        @item.category_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 0")
       end
       it "status_idが0以下だと登録できない" do
-        @item.status_id = '0'
+        @item.status_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Status must be other than 0")
       end
@@ -42,12 +42,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it "priceが¥300未満だと登録できない" do
-        @item.price = '100'
+        @item.price = 100
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
       end
       it "priceが¥9,999,999以上だと登録できない" do
-        @item.price = '10000000'
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end
@@ -57,17 +57,17 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price is not a number")
       end
       it "shipping_fee_idが0以下だと登録できない" do
-        @item.shipping_id = '0'
+        @item.shipping_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping must be other than 0")
       end
       it "prefecture_idが0以下だと登録できない" do
-        @item.shipment_source_id = '0'
+        @item.shipment_source_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipment source must be other than 0")
       end
       it "scheduled_delivery_idが0以下だと登録できない" do
-        @item.date_of_shipment_id = '0'
+        @item.date_of_shipment_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Date of shipment must be other than 0")
       end

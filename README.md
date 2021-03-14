@@ -15,11 +15,11 @@
 
 ### Association
 
-- has_many :orders
+- has_many :items
 - has_many :comments
 - has_many :purchase_histories
 
-## buys テーブル
+## orders テーブル
 
 | Column           | Type       | Options                       |
 | ---------------- | ---------- | ----------------------------- |
@@ -52,7 +52,7 @@
 - belongs_to :order
 
 
-## orders テーブル
+## items テーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
@@ -62,7 +62,7 @@
 | description         | text       | null: false                    |
 | status_id           | integer    | null: false                    |
 | shipping_id         | integer    | null: false                    |
-| shipment_source_id  | integer    | null: false                    |
+| prefecture_id       | integer    | null: false                    |
 | date_of_shipment_id | integer    | null: false                    |
 | user                | references | null: false, foreign_key: true |
 

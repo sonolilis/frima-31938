@@ -24,7 +24,7 @@ class User < ApplicationRecord
     end
     validates :nickname
     validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }, confirmation: true
-    validates :email, uniqueness: true, format: { with:VALID_EMAIL_REGEX, message: 'is invalid. Format is not.' }
+    #validates :email, uniqueness: true, format: { with:VALID_EMAIL_REGEX, message: 'is invalid. Format is not.' }
     validates :birthday
   end
 end

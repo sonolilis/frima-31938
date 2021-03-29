@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :item_find_initialize, only: [:show, :edit, :update]
-  before_action :redirect_to_root_path, only [:edit, :update]
+  before_action :redirect_to_root_path, only: [:edit, :update]
 
   def index
     @items = Item.all.includes(:user).order("created_at DESC")

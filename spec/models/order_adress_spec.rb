@@ -20,11 +20,11 @@ RSpec.describe OrderAdress, type: :model do
     end
     context '情報の保存がうまくいかない時' do
       it 'user_idが空だと保存できない' do
-        @user.id = ''
+        @order_adress.user_id = ''
         expect(@user).to be_valid
       end
       it 'item_idが空だと保存できない' do
-        @item.id = ''
+        @order_adress.item_id = ''
         expect(@item).to be_valid
       end
       it 'postnumberが空だと保存できない' do
@@ -43,7 +43,7 @@ RSpec.describe OrderAdress, type: :model do
         expect(@order_adress.errors.full_messages).to include("Shipment source can't be blank")
       end
       it 'shipment_sourceが0だと保存できない' do
-        @order_adress.shipment_source_id = '0'
+        @order_adress.shipment_source_id = 0
         @order_adress.valid?
         expect(@order_adress.errors.full_messages).to include("Shipment source can't be blank")
       end

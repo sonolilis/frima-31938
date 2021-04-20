@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe OrderAdress, type: :model do
   describe '購入情報の保存' do
     before do
-      @order_adress = FactoryBot.build(:order_adress)
+      @item = FactoryBot.create(:item)
+      @user = FactoryBot.create(:user)
+      @order_adress = FactoryBot.build(:order_adress, user_id: @user.id, item_id: @item.id)
+      sleep 0.1
     end
 
     context '情報の保存がうまくいく時' do
@@ -16,6 +19,14 @@ RSpec.describe OrderAdress, type: :model do
       end
     end
     context '情報の保存がうまくいかない時' do
+      it 'user_idが空だと保存できない' do
+        @user.id = ''
+        expect(@user).to be_valid
+      end
+      it 'item_idが空だと保存できない' do
+        @item.id = ''
+        expect(@item).to be_valid
+      end
       it 'postnumberが空だと保存できない' do
         @order_adress.postnumber = ''
         @order_adress.valid?

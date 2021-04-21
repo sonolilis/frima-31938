@@ -1,3 +1,5 @@
+window.addEventListener("load", calc);
+
 function calc (){
   const itemPrice = document.getElementById("item-price")
 

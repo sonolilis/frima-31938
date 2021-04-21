@@ -84,7 +84,6 @@
 
 
 ### Association
-
-- has_one         :buy
+      
 - belongs_to      :user
 - belongs_to      :order

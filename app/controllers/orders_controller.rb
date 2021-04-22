@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :item_find_initialize
   before_action :user_check
   before_action :purchase_check
+  before_action :redirect_root, only: [:index, :create]
 
   def index
     @order_adress = OrderAdress.new
@@ -48,6 +49,10 @@ class OrdersController < ApplicationController
     if @order.present?
       redirect_to root_path
     end
+  end
+
+  def redirect_root
+    redirect_to root_path if current_user == @item.user || @item.order.present?
   end
 
 end
